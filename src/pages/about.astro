@@ -1,11 +1,56 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const pageTitle = "About Me ...";
+const titleStyle = "text-purple-400 text-2xl font-bold";
+
+const identify = {
+  firstName: "Tihii",
+  country: "Viet Nam",
+  occupation: "Developer",
+  hobbies: ["listenning music", "ride and chill", "coffee and smoke"],
+};
+
+const skills = ["HTML", "JS", "Flutter", "Astro", "Dart"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 
-<Layout title="About Me !">
+<Layout title={pageTitle} titleStyle={titleStyle}>
+  <main>
+    <div>Hello, I'm Tihii :D</div>
+    <ul>
+      <li>My name is: {identify.firstName}.</li>
+      <li>
+        I live in {identify.country} and I work as a {identify.occupation}.
+      </li>
+      <p>My hobbies are:</p>
+      {
+        identify.hobbies.length >= 2 &&
+          identify.hobbies.map((item) => <li>{item}</li>)
+      }
+    </ul>
+    <p>My dev skills:</p>
+    <ul>
+      {skills.map((item) => <li class="text-green-400 font-bold">{item}</li>)}
+    </ul>
 
-
-    <main>
-        <div>Hello, I'm Tihii :D </div>
-    </main>
+    {happy && <p>I very interested when learning Astro!</p>}
+    {
+      finished ? (
+        <p>I have finished this tutorial.</p>
+      ) : (
+        <p>I have to keep learning to improve my Astro skill.</p>
+      )
+    }
+    {
+      goal == 3 ? (
+        <p>My goal is to finish in 3 days.</p>
+      ) : (
+        <p>My goal is not in 3 days.</p>
+      )
+    }
+  </main>
 </Layout>

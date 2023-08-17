@@ -1,15 +1,13 @@
 ---
+const pageTitle = "Home";
+const titleStyle = "text-black-400 text-2xl font-bold";
 
-import Layout from '../layouts/Layout.astro';
+import Navigator from "../components/Navigator.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Hello Astro from Tihii with vcl">
-	<main class="">
-		<div class="font-bold">hello Tihiiiii</div>
-		<div class="flex flex-col" >
-
-			<a href="/about" class="text-red-400">About me...</a>
-			<a href="/blog" class="text-blue-400">Go to Blog</a>
-		</div>
-	</main>
+<Layout title={pageTitle} titleStyle={titleStyle}>
+  <main class="">
+    <div class="flex flex-col"></div>
+  </main>
 </Layout>

@@ -1,12 +1,19 @@
 ---
+const pageTitle = "Blog";
+const titleStyle = "text-black-400 text-2xl font-bold";
+
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="Blog!!!" >
-    <main>
-        <div class="text-green-400">My blog...</div>
-    </main>
-
-
-
+<Layout title={pageTitle} titleStyle={titleStyle}>
+  <main>
+    <div class="text-green-400">My blogs...</div>
+    <ul>
+      <li class="flex flex-col">
+        <a href="/posts/post-1">Post 1</a>
+        <a href="/posts/post-2">Post 2</a>
+        <a href="/posts/post-3">Post 3</a>
+      </li>
+    </ul>
+  </main>
 </Layout>
