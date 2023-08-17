@@ -19,38 +19,37 @@ const goal = 3;
 ---
 
 <Layout title={pageTitle} titleStyle={titleStyle}>
-  <main>
-    <div>Hello, I'm Tihii :D</div>
-    <ul>
-      <li>My name is: {identify.firstName}.</li>
-      <li>
-        I live in {identify.country} and I work as a {identify.occupation}.
-      </li>
-      <p>My hobbies are:</p>
+  <ul>
+    <li>My name is: {identify.firstName}.</li>
+    <li>
+      I live in {identify.country} and I work as a {identify.occupation}.
+    </li>
+    <ul class="list-inside list-disc">
+      My hobbies are:
+
       {
         identify.hobbies.length >= 2 &&
           identify.hobbies.map((item) => <li>{item}</li>)
       }
     </ul>
-    <p>My dev skills:</p>
-    <ul>
+    <ul class="list-inside list-disc">
+      My dev skills:
       {skills.map((item) => <li class="text-green-400 font-bold">{item}</li>)}
     </ul>
-
-    {happy && <p>I very interested when learning Astro!</p>}
-    {
-      finished ? (
-        <p>I have finished this tutorial.</p>
-      ) : (
-        <p>I have to keep learning to improve my Astro skill.</p>
-      )
-    }
-    {
-      goal == 3 ? (
-        <p>My goal is to finish in 3 days.</p>
-      ) : (
-        <p>My goal is not in 3 days.</p>
-      )
-    }
-  </main>
+  </ul>
+  {happy && <p>I very interested when learning Astro!</p>}
+  {
+    finished ? (
+      <p>I have finished this tutorial.</p>
+    ) : (
+      <p>I have to keep learning to improve my Astro skill.</p>
+    )
+  }
+  {
+    goal == 3 ? (
+      <p>My goal is to finish in 3 days.</p>
+    ) : (
+      <p>My goal is not in 3 days.</p>
+    )
+  }
 </Layout>
