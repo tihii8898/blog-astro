@@ -3,10 +3,13 @@ const pageTitle = "Home";
 const titleStyle = "text-black-400 text-2xl font-bold";
 
 import Layout from "../layouts/Layout.astro";
+import Greeting from "../components/Greeting";
 ---
 
 <Layout title={pageTitle} titleStyle={titleStyle}>
   <main class="">
-    <div class="flex flex-col"></div>
+    <div class="flex flex-col">
+      <Greeting client:visible message={["Hej", "Hallo", "Hola", "Habari"]} />
+    </div>
   </main>
 </Layout>
